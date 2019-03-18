@@ -1,0 +1,106 @@
+﻿@using SimpleStockExchange.Models
+    @model OrderViewModel
+    @{
+        ViewData["Title"] = "Home Page";
+
+    }
+
+<div class="row">
+    <h2>@Model.OrderBookDetails.Name</h2> @Model.OrderBookDetails.CurrentPrice
+</div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th class="text-center" colspan="3">Bid</th>
+                    </tr>
+                    <tr>
+                        @*<th class="text-center">#</th>*@
+                        <th class="text-center">Amount</th>
+                        <th class="text-center">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{int i = 0;}
+                    @foreach (var bid in Model.OrderBookDetails.Bids)
+                    {
+                        <tr>
+                            @*<th scope="row">@i</th>*@
+                            <td class="text-right">@bid.Amount</td>
+                            <td class="text-right">@bid.Price</td>
+                        </tr>
+                        i++;
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <table class="table table-bordered">
+                <thead class="thead-light">
+                <tr>
+                    <th class="text-center" colspan="3">Ask</th>
+                </tr>
+                <tr>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Amount</th>
+                    @*<th class="text-center">#</th>*@
+                </tr>
+                </thead>
+                <tbody>
+                    @{int k = 0;}
+                    @foreach (var ask in Model.OrderBookDetails.Asks)
+                    {
+                        <tr>
+                            <td class="text-right">@ask.Price</td>
+                            <td class="text-right">@ask.Amount</td>
+                            @*<th scope="row">@k</th>*@
+                        </tr>
+                        k++;
+                        
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <form method="post" asp-controller="Home" asp-action="Buy">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label asp-for="Buy.Amount"></label>
+                        <input type="text" class="form-control" asp-for="Buy.Amount">
+                        <span asp-validation-for="Buy.Amount"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="Buy.Price"></label>
+                        <input type="text" class="form-control" asp-for="Buy.Price">
+                        <span asp-validation-for="Buy.Price"></span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Buy</button>
+            </form>
+        </div>
+        <div class="col">
+            <form method="post" asp-controller="Home" asp-action="Sell">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label asp-for="Sell.Amount"></label>
+                        <input type="text" class="form-control" asp-for="Sell.Amount">
+                        <span asp-validation-for="Sell.Amount"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="Sell.Price"></label>
+                        <input type="text" class="form-control" asp-for="Sell.Price">
+                        <span asp-validation-for="Sell.Price"></span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-danger">Sell</button>
+            </form>
+        </div>
+    </div>
+
+
