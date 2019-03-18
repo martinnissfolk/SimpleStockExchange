@@ -175,26 +175,30 @@ namespace SimpleStockExchange.Domain.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2f93dc3f-c920-41a2-bf50-a98082df17b8",
+                            Id = "a3329215-0deb-4db2-b817-a14ad5c80c95",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "783b007d-630b-407b-b677-5b44b6fe52dc",
-                            Email = "goran@example.se",
+                            ConcurrencyStamp = "a288299f-a3bc-47e4-a158-a713928e91b2",
+                            Email = "null",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEFxw/TjBSJw3FihjebkAbiuJyToi+GIRhjEvkQOTtZt6+oZNGnAwiJPZe54WVsPZUw==",
+                            NormalizedUserName = "BILL",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHRgQZRQBmPT/fQ6GTWTmGAD1BgV39Go5K30FQCF2rpMBuZbaDqVGCiydU3SDLHDIQ==",
                             PhoneNumberConfirmed = false,
+                            SecurityStamp = "PJPGIXFAASFEALFPQB4ME4IJJUFNLBZW",
                             TwoFactorEnabled = false,
-                            UserName = "goran"
+                            UserName = "bill"
                         },
                         new
                         {
-                            Id = "cccf6873-21db-4ab9-9d03-eabf79f67418",
+                            Id = "1a79c5c6-894e-40b2-bc06-d3593ee134f9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9890b93c-4caf-4c16-af19-0181d2b0b346",
+                            ConcurrencyStamp = "c9b71971-a3d3-4213-85e5-4e0fa4caf9a3",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEAi1JlJWUogB7wPkhL0gNVeEuziviRcme0OsVy3bxylDuOaJoMnzDjh7deHqkGY7kQ==",
+                            NormalizedUserName = "JOE",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEBAo3F2z0LOFuujNFX0ycGoF6wXrr1X0wcWGhFQjeio8p13zksBB9k7dH15QwvPNw==",
                             PhoneNumberConfirmed = false,
+                            SecurityStamp = "YB27YKWP4TUJIFZ6BJZCOD3NTRDT2KKY",
                             TwoFactorEnabled = false,
                             UserName = "joe"
                         });
@@ -231,35 +235,46 @@ namespace SimpleStockExchange.Domain.Migrations
                         new
                         {
                             Id = 1,
-                            Date = new DateTime(2019, 3, 15, 12, 14, 57, 276, DateTimeKind.Local).AddTicks(4655),
+                            Date = new DateTime(2019, 3, 16, 9, 59, 45, 646, DateTimeKind.Local).AddTicks(8942),
                             OrderBookId = 1,
                             OrderStatus = 0,
                             OrderType = true,
-                            Price = 10,
-                            Quantity = 10,
-                            UserId = "cccf6873-21db-4ab9-9d03-eabf79f67418"
+                            Price = 8,
+                            Quantity = 5,
+                            UserId = "1a79c5c6-894e-40b2-bc06-d3593ee134f9"
                         },
                         new
                         {
                             Id = 2,
-                            Date = new DateTime(2019, 3, 16, 12, 14, 57, 278, DateTimeKind.Local).AddTicks(4),
+                            Date = new DateTime(2019, 3, 17, 9, 59, 45, 648, DateTimeKind.Local).AddTicks(4764),
                             OrderBookId = 1,
                             OrderStatus = 0,
                             OrderType = true,
                             Price = 10,
-                            Quantity = 10,
-                            UserId = "cccf6873-21db-4ab9-9d03-eabf79f67418"
+                            Quantity = 8,
+                            UserId = "1a79c5c6-894e-40b2-bc06-d3593ee134f9"
                         },
                         new
                         {
                             Id = 3,
-                            Date = new DateTime(2019, 3, 14, 12, 14, 57, 278, DateTimeKind.Local).AddTicks(25),
+                            Date = new DateTime(2019, 3, 15, 9, 59, 45, 648, DateTimeKind.Local).AddTicks(4785),
                             OrderBookId = 1,
                             OrderStatus = 0,
-                            OrderType = true,
-                            Price = 10,
+                            OrderType = false,
+                            Price = 12,
                             Quantity = 10,
-                            UserId = "cccf6873-21db-4ab9-9d03-eabf79f67418"
+                            UserId = "1a79c5c6-894e-40b2-bc06-d3593ee134f9"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Date = new DateTime(2019, 3, 15, 9, 59, 45, 648, DateTimeKind.Local).AddTicks(4790),
+                            OrderBookId = 1,
+                            OrderStatus = 0,
+                            OrderType = false,
+                            Price = 15,
+                            Quantity = 20,
+                            UserId = "1a79c5c6-894e-40b2-bc06-d3593ee134f9"
                         });
                 });
 
@@ -286,7 +301,7 @@ namespace SimpleStockExchange.Domain.Migrations
                             Id = 1,
                             CompanyName = "Stock A",
                             CurrentPrice = 10,
-                            Quantity = 10
+                            Quantity = 100
                         });
                 });
 

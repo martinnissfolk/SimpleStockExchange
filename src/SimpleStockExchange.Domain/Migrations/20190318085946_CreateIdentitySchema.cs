@@ -202,32 +202,37 @@ namespace SimpleStockExchange.Domain.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2f93dc3f-c920-41a2-bf50-a98082df17b8", 0, "783b007d-630b-407b-b677-5b44b6fe52dc", "goran@example.se", true, false, null, null, null, "AQAAAAEAACcQAAAAEFxw/TjBSJw3FihjebkAbiuJyToi+GIRhjEvkQOTtZt6+oZNGnAwiJPZe54WVsPZUw==", null, false, null, false, "goran" });
+                values: new object[] { "a3329215-0deb-4db2-b817-a14ad5c80c95", 0, "a288299f-a3bc-47e4-a158-a713928e91b2", "null", true, false, null, null, "BILL", "AQAAAAEAACcQAAAAEHRgQZRQBmPT/fQ6GTWTmGAD1BgV39Go5K30FQCF2rpMBuZbaDqVGCiydU3SDLHDIQ==", null, false, "PJPGIXFAASFEALFPQB4ME4IJJUFNLBZW", false, "bill" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "cccf6873-21db-4ab9-9d03-eabf79f67418", 0, "9890b93c-4caf-4c16-af19-0181d2b0b346", null, false, false, null, null, null, "AQAAAAEAACcQAAAAEAi1JlJWUogB7wPkhL0gNVeEuziviRcme0OsVy3bxylDuOaJoMnzDjh7deHqkGY7kQ==", null, false, null, false, "joe" });
+                values: new object[] { "1a79c5c6-894e-40b2-bc06-d3593ee134f9", 0, "c9b71971-a3d3-4213-85e5-4e0fa4caf9a3", null, false, false, null, null, "JOE", "AQAAAAEAACcQAAAAEEBAo3F2z0LOFuujNFX0ycGoF6wXrr1X0wcWGhFQjeio8p13zksBB9k7dH15QwvPNw==", null, false, "YB27YKWP4TUJIFZ6BJZCOD3NTRDT2KKY", false, "joe" });
 
             migrationBuilder.InsertData(
                 table: "OrderBook",
                 columns: new[] { "Id", "CompanyName", "CurrentPrice", "Quantity", "TickerSymbol" },
-                values: new object[] { 1, "Stock A", 10, 10, null });
+                values: new object[] { 1, "Stock A", 10, 100, null });
 
             migrationBuilder.InsertData(
                 table: "Orders",
                 columns: new[] { "Id", "Date", "OrderBookId", "OrderStatus", "OrderType", "Price", "Quantity", "UserId" },
-                values: new object[] { 1, new DateTime(2019, 3, 15, 12, 14, 57, 276, DateTimeKind.Local).AddTicks(4655), 1, 0, true, 10, 10, "cccf6873-21db-4ab9-9d03-eabf79f67418" });
+                values: new object[] { 1, new DateTime(2019, 3, 16, 9, 59, 45, 646, DateTimeKind.Local).AddTicks(8942), 1, 0, true, 8, 5, "1a79c5c6-894e-40b2-bc06-d3593ee134f9" });
 
             migrationBuilder.InsertData(
                 table: "Orders",
                 columns: new[] { "Id", "Date", "OrderBookId", "OrderStatus", "OrderType", "Price", "Quantity", "UserId" },
-                values: new object[] { 2, new DateTime(2019, 3, 16, 12, 14, 57, 278, DateTimeKind.Local).AddTicks(4), 1, 0, true, 10, 10, "cccf6873-21db-4ab9-9d03-eabf79f67418" });
+                values: new object[] { 2, new DateTime(2019, 3, 17, 9, 59, 45, 648, DateTimeKind.Local).AddTicks(4764), 1, 0, true, 10, 8, "1a79c5c6-894e-40b2-bc06-d3593ee134f9" });
 
             migrationBuilder.InsertData(
                 table: "Orders",
                 columns: new[] { "Id", "Date", "OrderBookId", "OrderStatus", "OrderType", "Price", "Quantity", "UserId" },
-                values: new object[] { 3, new DateTime(2019, 3, 14, 12, 14, 57, 278, DateTimeKind.Local).AddTicks(25), 1, 0, true, 10, 10, "cccf6873-21db-4ab9-9d03-eabf79f67418" });
+                values: new object[] { 3, new DateTime(2019, 3, 15, 9, 59, 45, 648, DateTimeKind.Local).AddTicks(4785), 1, 0, false, 12, 10, "1a79c5c6-894e-40b2-bc06-d3593ee134f9" });
+
+            migrationBuilder.InsertData(
+                table: "Orders",
+                columns: new[] { "Id", "Date", "OrderBookId", "OrderStatus", "OrderType", "Price", "Quantity", "UserId" },
+                values: new object[] { 4, new DateTime(2019, 3, 15, 9, 59, 45, 648, DateTimeKind.Local).AddTicks(4790), 1, 0, false, 15, 20, "1a79c5c6-894e-40b2-bc06-d3593ee134f9" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
