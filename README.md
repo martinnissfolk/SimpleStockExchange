@@ -11,13 +11,14 @@ Two test user accounts have been created before hand.
 * login/register different users
 
 ## Requierements
-ASP.NET Core 2.2
-Visual Studio 2017 or later
+
+* ASP.NET Core 2.2
+* Visual Studio 2017 or later
 
 ## Setup project
-The SQLite database needs to be created with Migrations
+The `SQLite` database needs to be created with `Migrations`
 
-Open up the Package Manager Console (PMC)
+Open up the `Package Manager Console` (PMC)
 
 Enter these commands
 
