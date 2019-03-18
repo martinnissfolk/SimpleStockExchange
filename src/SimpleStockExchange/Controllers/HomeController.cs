@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SimpleStockExchange.Domain.Data;
@@ -12,6 +13,7 @@ using SimpleStockExchange.Services;
 
 namespace SimpleStockExchange.Controllers
 {
+   
     public class HomeController : Controller
     {
         private IOrderService _orderService;
@@ -48,6 +50,11 @@ namespace SimpleStockExchange.Controllers
         [HttpPost]
         public async Task<IActionResult> Buy(OrderViewModel model)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             if (!ModelState.IsValid)
             {
                 return View("Index", await GetOrderBookAsync());
@@ -60,7 +67,12 @@ namespace SimpleStockExchange.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Sell(OrderViewModel model)
-        { 
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             if (!ModelState.IsValid)
                 return View("Index", await GetOrderBookAsync());
 
